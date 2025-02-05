@@ -12,16 +12,17 @@ import java.util.Properties;
 
 public class Util {
     // реализуйте настройку соеденения с БД
-        private static final String JDBC_URL = "jdbc:mysql://localhost:3306/kata";
-        private static final String JDBC_USERNAME = "root";
-        private static final String JDBC_PASSWORD = "root";
+
+    private static final String url = "jdbc:mysql://localhost:3306/kata";
+    private static final String user = "root";
+    private static final String password = "root";
 
     private static SessionFactory sessionFactory;
 
     public static Connection getConnection() {
         Connection connection = null;
         try {
-            connection = DriverManager.getConnection(JDBC_URL, JDBC_USERNAME, JDBC_PASSWORD);
+            connection = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
